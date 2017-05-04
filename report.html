@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11799,7 +11799,6 @@ div#notebook {
 <span class="n">features</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;MEDV&#39;</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
     
 <span class="c1"># Success</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Boston housing dataset has </span><span class="si">{}</span><span class="s2"> data points with </span><span class="si">{}</span><span class="s2"> variables each.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -11813,6 +11812,70 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Boston housing dataset has 489 data points with 4 variables each.
+        RM  LSTAT  PTRATIO
+0    6.575   4.98     15.3
+1    6.421   9.14     17.8
+2    7.185   4.03     17.8
+3    6.998   2.94     18.7
+4    7.147   5.33     18.7
+5    6.430   5.21     18.7
+6    6.012  12.43     15.2
+7    6.172  19.15     15.2
+8    5.631  29.93     15.2
+9    6.004  17.10     15.2
+10   6.377  20.45     15.2
+11   6.009  13.27     15.2
+12   5.889  15.71     15.2
+13   5.949   8.26     21.0
+14   6.096  10.26     21.0
+15   5.834   8.47     21.0
+16   5.935   6.58     21.0
+17   5.990  14.67     21.0
+18   5.456  11.69     21.0
+19   5.727  11.28     21.0
+20   5.570  21.02     21.0
+21   5.965  13.83     21.0
+22   6.142  18.72     21.0
+23   5.813  19.88     21.0
+24   5.924  16.30     21.0
+25   5.599  16.51     21.0
+26   5.813  14.81     21.0
+27   6.047  17.28     21.0
+28   6.495  12.80     21.0
+29   6.674  11.98     21.0
+..     ...    ...      ...
+459  6.484  18.68     20.2
+460  5.304  24.91     20.2
+461  6.185  18.03     20.2
+462  6.229  13.11     20.2
+463  6.242  10.74     20.2
+464  6.750   7.74     20.2
+465  7.061   7.01     20.2
+466  5.762  10.42     20.2
+467  5.871  13.34     20.2
+468  6.312  10.58     20.2
+469  6.114  14.98     20.2
+470  5.905  11.45     20.2
+471  5.454  18.06     20.1
+472  5.414  23.97     20.1
+473  5.093  29.68     20.1
+474  5.983  18.07     20.1
+475  5.983  13.35     20.1
+476  5.707  12.01     19.2
+477  5.926  13.59     19.2
+478  5.670  17.60     19.2
+479  5.390  21.14     19.2
+480  5.794  14.10     19.2
+481  6.019  12.92     19.2
+482  5.569  15.10     19.2
+483  6.027  14.33     19.2
+484  6.593   9.67     21.0
+485  6.120   9.08     21.0
+486  6.976   5.64     21.0
+487  6.794   6.48     21.0
+488  6.030   7.88     21.0
+
+[489 rows x 3 columns]
 </pre>
 </div>
 </div>
@@ -11926,7 +11989,7 @@ Standard deviation of prices: $165,171.13
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>**Answer: 
-'RM': More likely to decrease. My logic is that the house size are similar among eachother in most suburbs, and more rooms means the the area would be more crowded, which in most cases lowers the valuse of the estate. However can also argue that the size of the house is larger, thereby price is higher. For the 'RM' would need more furture testing to acutally determine. 
+'RM': More likely to increase the value, as the room number may indicate the size of the house, thereby price is higher. 
 'LSTAT': Most likely to decrease. As lower class typically has lower spending power. 
 'PTRATIO': More likely to decrease. Since it is always more favourable to have a lower student to teacher ratio.</p>
 
@@ -13218,7 +13281,8 @@ ERERfSMdoIiIiIiI6BvpAEVERERERN/4H0NSpqDLJ1s0AAAAAElFTkSuQmCC
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-The score increases with the data points added, however the improvement became slower and slower, does not seem to affect the score as much.</p>
+For maxium dept = six: 
+The training score decreases when data points are added; The testing score increases when data points are added. The testing score stop improving after reaching about 200 training points, therefore more training points does not necessarily improves the model.</p>
 
 </div>
 </div>
@@ -13681,9 +13745,12 @@ jZ4oZQAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ol>
-<li>For maximum depth of 1, the model is high in bias and low in variance. The high bias is due to the low score, the low variance is due to the size of the shaded region which is very narrow. </li>
-<li>For maximum depth of 10, the model is low in bias and high in variance. The low bias is due to the high score, the high variance is due to the size of the shaded region which is very wide.  </li>
+<li><p>For maximum depth of 1, the model is high in bias and low in variance. First is that with depth of 1, the model is oversimlified and therefore result in high bias. The variance is low due to that the model has a smaller range of selection with a max_depth of 1. This can also be viewed from the model, where both the validation and training score is low, and the variance in small at max_depth = 1.</p>
+</li>
+<li><p>For maximum depth of 10, the model is low in bias and high in variance. The low bias is due that the model complexcity allow the model to fit the data well, the high variance is due the model fits wider range of results into the model. This can also be viewed from the model, where the the training score is high, and the variance in large at max_depth = 10.</p>
+</li>
 </ol>
+<p>The training score and the validation score significatly diverges after max_depth=4.</p>
 
 </div>
 </div>
@@ -13735,7 +13802,7 @@ jZ4oZQAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong>
-The grid search technique pair up different parameters to find the model with the best score. 
+The grid search technique pair up different parameters to search exhaustively the model with the best score. 
 Through pairing up different parameters, we can calculate the score and find the best pair of parameter to optimize the learning algorithm.</p>
 
 </div>
@@ -13915,7 +13982,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong>Parameter 'max_depth' is 4 for the optimal model.</p>
 
 </div>
 </div>
@@ -14009,7 +14076,7 @@ Minimum price: $105,000.00 Maximum price: $1,024,800.00 Mean price: $454,342.94 
 <p><strong>Answer: </strong></p>
 <ol>
 <li>Firstly the price falls within the range of the Maximum and minimum value of the dataset. </li>
-<li>Second the price clearly shows the effect of the three parameters, LTSTAT, PTRATIO, and RM, with Client 3 having the highest prediction who outperform the other two in all three parameters. The same can be observed with the other two dataset. </li>
+<li>Second the price clearly shows the effect of the three parameters, LTSTAT, PTRATIO, and RM, with Client 3 having the highest prediction who outperform the other two in all three parameters, specifically, Client 3 has the largest number of rooms, the lowest poverty rate and lowest teacher to student ration, which all positively affects the housing price. Respectively Client 1 has the second best LTSTAT, PTRATIO, and RM, and Client 2 has the least. </li>
 </ol>
 
 </div>
